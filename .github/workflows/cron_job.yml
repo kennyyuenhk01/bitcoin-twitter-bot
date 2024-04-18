@@ -1,3 +1,9 @@
+name: Tweet Bitcoin Price
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+
 jobs:
   tweet_bitcoin_price:
     runs-on: ubuntu-latest
