@@ -9,6 +9,8 @@ def authenticate_twitter():
     认证 Twitter API 并创建 API 客户端。
     返回 tweepy.Client 对象。
     """
+    print("TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN}")
+
     client = tweepy.Client(bearer_token=TWITTER_BEARER_TOKEN)
     return client
 
@@ -20,6 +22,8 @@ def tweet_message(message):
     返回:
         tweepy.Response: 发送推文的响应对象。
     """
+    print("111")
+
     client = authenticate_twitter()
     response = client.create_tweet(text=message)
     return response
