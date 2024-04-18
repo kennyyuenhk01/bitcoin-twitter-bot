@@ -15,13 +15,14 @@ def authenticate_twitter():
     """
 
     # Gainaing access and connecting to Twitter API using Credentials
-    client = tweepy.Client(TWITTER_BEARER_TOKEN, TWITTER_API_KEY, TWITTER_API_SECRET_KEY, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET)
+    client = tweepy.Client(
+        consumer_key=TWITTER_API_KEY,
+        consumer_secret=TWITTER_API_SECRET_KEY,
+        access_token=TWITTER_ACCESS_TOKEN,
+        access_token_secret=TWITTER_ACCESS_TOKEN_SECRET
+    )
 
-    # Creating API instance. This is so we still have access to Twitter API V1 features
-    auth = tweepy.OAuth1UserHandler(TWITTER_API_KEY, TWITTER_API_SECRET_KEY, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET)
-    api = tweepy.API(auth)
-
-    return api
+    return client
 
 def tweet_message(message):
     """
@@ -31,6 +32,6 @@ def tweet_message(message):
     返回:
         tweepy.Status: 发送推文的状态对象。
     """
-    api = authenticate_twitter()
-    status = api.update_status(message)
+    client = authenticate_twitter()
+    status = client.create_tweet(text=message)
     return status
