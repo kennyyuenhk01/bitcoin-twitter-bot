@@ -22,7 +22,7 @@ def main():
         print(f"Current Bitcoin Price: ${price} USD")
         message = f"Current Bitcoin price: ${price} USD"
         tweet = tweet_message(message)
-        print("Tweet sent successfully:", tweet.text)
+        print("Tweet sent successfully:", message)
     except Exception as e:
         print("Error:", e)
 

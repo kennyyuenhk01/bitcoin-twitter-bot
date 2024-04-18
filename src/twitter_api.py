@@ -26,13 +26,13 @@ def authenticate_twitter():
 
 def tweet_message(message):
     """
-    发送一个推文。
+    使用 Twitter API v2 发送一个推文。
     参数:
         message (str): 要发布的推文内容。
     返回:
-        tweepy.Status: 发送推文的状态对象。
+        tweepy.Response: 发送推文的响应对象。
     """
     client = authenticate_twitter()
-    status = client.update_status(message)
-
-    return status
+    response = client.create_tweet(text=message)
+    
+    return response
