@@ -33,5 +33,5 @@ def tweet_message(message):
         tweepy.Status: 发送推文的状态对象。
     """
     client = authenticate_twitter()
-    status = client.create_tweet(text=message)
+    status = client.create_tweet(message)
     return status
