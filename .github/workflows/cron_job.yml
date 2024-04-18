@@ -2,7 +2,7 @@ name: Tweet Bitcoin Price
 
 on:
   schedule:
-    - cron: "*/05 * * * *"
+    - cron: "0 * * * *"
 
 jobs:
   tweet_bitcoin_price:
