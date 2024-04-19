@@ -20,7 +20,7 @@ def main():
     try:
         price = get_bitcoin_price()
         print(f"Current Bitcoin Price: ${price} USD")
-        message = f"Current Bitcoin price: ${price} USD"
+        message = f"Current Bitcoin price: ${price} USD #Bitcoin #BTC #Crypto #Cryptocurrency #CryptoNews"
         tweet = tweet_message(message)
         print("Tweet sent successfully:", message)
     except Exception as e:
